@@ -38,7 +38,7 @@ Pane{
     palette.buttonText: config.ThemeColor
 
     font.family: config.Font
-    font.pointSize: config.FontSize !== "" ? config.FontSize : parseInt(height / 80)
+    font.pointSize: config.FontSize !== "" ? config.FontSize : parseInt(height / 100)
     focus: true
 
     RowLayout {

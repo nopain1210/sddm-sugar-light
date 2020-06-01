@@ -29,7 +29,7 @@ Column {
 
     Item {
         id: usernameField
-        height: root.font.pointSize * 3.25
+        height: root.font.pointSize * 4.25
         width: parent.width / 2
         anchors.horizontalCenter: parent.horizontalCenter
 
@@ -37,7 +37,7 @@ Column {
             id: username
             text: config.ForceLastUser == "true" ? userModel.lastUser : ""
             anchors.centerIn: parent
-            height: root.font.pointSize * 3
+            height: root.font.pointSize * 4
             width: parent.width
             placeholderText: config.TranslateUsernamePlaceholder || textConstants.userName
             selectByMouse: true
@@ -92,14 +92,14 @@ Column {
 
     Item {
         id: passwordField
-        height: root.font.pointSize * 4.5
+        height: root.font.pointSize * 6.5
         width: parent.width / 2
         anchors.horizontalCenter: parent.horizontalCenter
 
         TextField {
             id: password
             anchors.centerIn: parent
-            height: root.font.pointSize * 3
+            height: root.font.pointSize * 4
             width: parent.width
             focus: config.ForcePasswordFocus == "true" ? true : false
             selectByMouse: true
@@ -157,16 +157,16 @@ Column {
 
             indicator: Rectangle {
                 id: indicator
+                anchors.verticalCenter: indicator.verticalCenter
                 anchors.left: parent.left
-                implicitHeight: root.font.pointSize
-                implicitWidth: root.font.pointSize
+                implicitHeight: root.font.pointSize + 6
+                implicitWidth: root.font.pointSize + 6
                 color: "transparent"
                 border.color: root.palette.text
                 border.width: parent.visualFocus ? 2 : 1
                 Rectangle {
                     id: dot
                     anchors.centerIn: parent
-                    implicitHeight: parent.width - 6
                     implicitWidth: parent.width - 6
                     color: root.palette.text
                     opacity: revealSecret.checked ? 1 : 0
@@ -282,7 +282,7 @@ Column {
 
     Item {
         id: login
-        height: root.font.pointSize * 3
+        height: root.font.pointSize * 4
         width: parent.width / 2
         anchors.horizontalCenter: parent.horizontalCenter
 
@@ -290,7 +290,7 @@ Column {
             id: loginButton
             anchors.horizontalCenter: parent.horizontalCenter
             text: config.TranslateLogin || textConstants.login
-            height: root.font.pointSize * 3
+            height: root.font.pointSize * 4
             implicitWidth: parent.width
             enabled: username.text !== "" && password.text !== "" ? true : false
             hoverEnabled: true
